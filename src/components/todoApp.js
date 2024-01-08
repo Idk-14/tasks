@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Task from "./task";
 
 export default function TodoApp(){
 
@@ -44,10 +45,10 @@ el .map es para buscar los datos y convertirlas a una estructura html
 la propiedad key es para que no confunda los elementos o renderice uno antesque otro
 */}
 
-        <div className="taskcontainer">
+        <div className="taskContainer">
             {
-                task.map(item => (
-                    <div key={item.id}>{item.title}</div>
+                task.map((item) => (
+                    <Task key={item.id} item={item}/>
                 ))
             }
         </div>
