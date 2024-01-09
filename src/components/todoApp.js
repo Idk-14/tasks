@@ -19,7 +19,7 @@ export default function TodoApp(){
 
 
     function handleDelete(id){
-        const temp = task.filter((item) => item.id != id); 
+        const temp = task.filter((item) => item.id !== id); 
     
         setTask(temp);
     
@@ -35,7 +35,7 @@ export default function TodoApp(){
             completed: false,
         };
 
-        const temp = [... task];
+        const temp = [...task];
         temp.unshift(newTask);
 
         setTask(temp);
@@ -44,7 +44,7 @@ export default function TodoApp(){
 
 // Esta es la funcion para editar las tareas //
     function handleUpdate(id, value){
-        const temp = [... task];
+        const temp = [...task];
         const item = temp.find(item => item.id === id);
         item.title = value;
         setTask(temp);
