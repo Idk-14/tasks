@@ -1,0 +1,128 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #273a2d;
+}
+
+::placeholder { color: rgb(255, 255, 255); }
+
+.tasksContainer 
+{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    max-width: 400px;
+    margin-left: 45rem;
+} 
+
+.taskContainerWrapper {
+  max-width: 300px;
+  width: 100%;
+}
+
+.taskInfo{
+  word-wrap: break-word;
+  overflow: auto;
+  max-height: 300px;
+  max-width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  row-gap: 2;
+  font-size: 17px;
+	font-weight: bold;
+	font-style: italic;
+	padding: 5px 10px;
+	outline: none;
+	background: #6F7357;
+	color: #EBE6EA;
+	border: none;
+	border-radius: 5px;
+	transition: .3s ease;
+}
+
+.taskInput 
+{
+  font-size: 17px;
+	font-weight: bold;
+	font-style: italic;
+	padding: 5px 10px;
+	outline: none;
+	background: #6F7357;
+	color: #EBE6EA;
+	border: none;
+	border-radius: 5px;
+	transition: .3s ease;
+}
+
+
+.listInput{
+  font-size: 17px;
+	font-weight: bold;
+	font-style: italic;
+	padding: 5px 10px;
+	outline: none;
+	background: #6F7357;
+	color: #EBE6EA;
+	border: none;
+	border-radius: 5px;
+	transition: .3s ease;
+  margin-top: 15px;
+}
+
+  
+  .buttonCreate 
+  {
+  font-size: 14px;
+    color: #273a2d;
+    background-color: #c8ad8d;
+    padding: 10px 13px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+
+  .buttonUpdate{
+    font-size: 14px;
+    color: #fff;
+    background-color: #8dacc8;
+    padding: 10px 13px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+
+  .buttonEdit{
+    display: flex;
+    font-size: 14px;
+    color: #fff;
+    background-color: #e4c5c4;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 5px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .buttonD{
+    font-size: 14px;
+    color: #fff;
+    background-color: #c88d8d;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+

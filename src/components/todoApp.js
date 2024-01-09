@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Task from "./task";
+import "./styles.css"
 
 export default function TodoApp(){
 
-    const [title, setTitle] = useState("Agrega tu tarea");
+    const [title, setTitle] = useState("");
 
     const [task, setTask] = useState([]);
 
@@ -15,6 +16,14 @@ export default function TodoApp(){
         setTitle(value);
     }
 
+
+
+    function handleDelete(id){
+        const temp = task.filter((item) => item.id != id); 
+    
+        setTask(temp);
+    
+    }
 //Boton que agrega las tareas en forma de lista
 
     function handleSubmit(e){
@@ -30,12 +39,21 @@ export default function TodoApp(){
         temp.unshift(newTask);
 
         setTask(temp);
+        setTitle("");
     }
 
-    return (<div className="todoContainer">
-        <form className="todoCreateForm" onSubmit={handleSubmit}>
-            <input onChange={handleChange} className="todoInput" value={title}/>
-            <input onClick={handleSubmit} type="submit" value="create todo" className="buttunCreate"/>
+// Esta es la funcion para editar las tareas //
+    function handleUpdate(id, value){
+        const temp = [... task];
+        const item = temp.find(item => item.id === id);
+        item.title = value;
+        setTask(temp);
+    }
+
+    return (<div className="tasksContainer">
+        <form className="tasksCreateForm" onSubmit={handleSubmit}>
+            <input onChange={handleChange} className="taskInput" value={title} placeholder="Agrega tu tarea"/>
+            <input onClick={handleSubmit} type="submit" value="Create" className="buttonCreate"/>
 
         </form>
 
@@ -44,14 +62,19 @@ el .map es para buscar los datos y convertirlas a una estructura html
 
 la propiedad key es para que no confunda los elementos o renderice uno antesque otro
 */}
-
+      <div className="taskContainerWrapper">
+        {/* Esta parte del código es la que muestra las tareas agregadas */}
         <div className="taskContainer">
-            {
-                task.map((item) => (
-                    <Task key={item.id} item={item}/>
-                ))
-            }
+          {task.map((item) => (
+            <Task
+              key={item.id}
+              item={item}
+              onUpdate={handleUpdate}
+              onDelete={handleDelete}
+            />
+          ))}
         </div>
+      </div>
     </div>
     );
 }
